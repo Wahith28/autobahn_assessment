@@ -1,19 +1,9 @@
-import "./styles.css";
-
-export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
-}
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import "./App.css";
 import Navbar from "./components/Navbar";
-import User from "./components/User";
 
 const App = () => {
-  const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
   const selector = useSelector((state) => state);
   useEffect(() => {
@@ -24,7 +14,6 @@ const App = () => {
     await fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
       .then((data) => {
-        setUsers(data);
         dispatch({ type: "GET_DATA", payload: data });
       })
       .catch((err) => {
@@ -69,8 +58,6 @@ const App = () => {
       }
     })
       .then((res) => {
-        console.log("in", input);
-
         dispatch({ type: "EDIT_USER", payload: input });
       })
       .catch((err) => {
@@ -92,12 +79,8 @@ const App = () => {
         console.log(err);
       });
   };
-
-  console.log(users);
-  console.log(selector, "sele");
   return (
     <div className="App">
-      {/* <h3>React Crud Using Jsonplaceholder</h3> */}
       <Navbar
         onAdd={onAdd}
         users={selector}
@@ -106,8 +89,6 @@ const App = () => {
         data={selector}
       />
       <br />
-
-      {/* </div> */}
     </div>
   );
 };
