@@ -14,23 +14,30 @@ const AddUser = ({ onAdd }) => {
       <form onSubmit={handleOnSubmit}>
         <Typography variant="h5">Add User</Typography>
         <br />
-        <TextField
-          placeholder="Name"
-          name="name"
-          size="small"
-          type="name"
-          required
-        />
-        <TextField
-          placeholder="Email"
-          name="email"
-          size="small"
-          type="email"
-          required
-        />
-        <Button onSubmit={handleOnSubmit} type="submit">
-          Add
-        </Button>
+        <div>
+          <TextField
+            placeholder="Name"
+            name="name"
+            size="small"
+            type="name"
+            required
+          />
+          <TextField
+            placeholder="Email"
+            name="email"
+            size="small"
+            type="email"
+            required
+          />
+          <Button
+            onSubmit={handleOnSubmit}
+            color="info"
+            variant="contained"
+            type="submit"
+          >
+            Add
+          </Button>
+        </div>
         <hr style={{ margin: "20px" }} />
       </form>
     </div>
