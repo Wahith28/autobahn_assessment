@@ -1,10 +1,8 @@
 import { Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import "./user.css";
 
 const Form = ({ id, email, name, onDelete, onEdit, data }) => {
-  // const data = useSelector((state) => state);
   const [edit, setEdit] = useState(false);
   const [inp, setinp] = useState(data);
   const handleDelete = () => {
@@ -13,7 +11,6 @@ const Form = ({ id, email, name, onDelete, onEdit, data }) => {
 
   const handleEdit = (e) => {
     setEdit(!edit);
-    // onEdit(inp, id);
   };
 
   const handleSave = (id) => {
@@ -25,9 +22,6 @@ const Form = ({ id, email, name, onDelete, onEdit, data }) => {
     let newarr = data;
     newarr[id - 1][e.target.name] = e.target.value;
     setinp(newarr);
-    // onEdit(e.target.name,e.target.email,id);
-    // e.target.name.value = "";
-    // e.target.email.value = "";
   };
 
   return (
@@ -99,14 +93,6 @@ const Form = ({ id, email, name, onDelete, onEdit, data }) => {
           </td>
         </>
       )}
-      {/* <td>{name}</td>
-      <td>{email}</td>
-      <td>
-        <button style={{ margin: "5px" }}>edit</button>
-        <button style={{ margin: "5px" }} onClick={handleDelete}>
-          delete
-        </button>
-      </td> */}
     </tr>
   );
 };

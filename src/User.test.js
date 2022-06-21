@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import User from "./components/User";
+
 describe("User Component", () => {
   it('should render correctly in "debug" mode', () => {
     const component = shallow(<User />);

@@ -33,11 +33,7 @@ const App = () => {
       }
     })
       .then((res) => {
-        if (res.status !== 201) {
-          return;
-        } else {
-          return res.json();
-        }
+        return res.json();
       })
       .then((data) => {
         dispatch({ type: "ADD_USER", payload: [...selector, data] });

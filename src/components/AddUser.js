@@ -13,6 +13,7 @@ const AddUser = ({ onAdd }) => {
     <div>
       <form onSubmit={handleOnSubmit}>
         <Typography variant="h5">Add User</Typography>
+        <br />
         <TextField
           placeholder="Name"
           name="name"
