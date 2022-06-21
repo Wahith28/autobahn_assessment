@@ -1,5 +1,5 @@
-import { Button, Divider, TextField, Typography } from "@mui/material";
 import React from "react";
+import { Button, TextField, Typography } from "@mui/material";
 
 const AddUser = ({ onAdd }) => {
   const handleOnSubmit = (e) => {
@@ -13,12 +13,24 @@ const AddUser = ({ onAdd }) => {
     <div>
       <form onSubmit={handleOnSubmit}>
         <Typography variant="h5">Add User</Typography>
-        <TextField placeholder="Name" name="name" size="small" />
-        <TextField placeholder="Email" name="email" size="small" />
+        <TextField
+          placeholder="Name"
+          name="name"
+          size="small"
+          type="name"
+          required
+        />
+        <TextField
+          placeholder="Email"
+          name="email"
+          size="small"
+          type="email"
+          required
+        />
         <Button onSubmit={handleOnSubmit} type="submit">
           Add
         </Button>
-        <hr style={{ margin: "10px" }} />
+        <hr style={{ margin: "20px" }} />
       </form>
     </div>
   );
